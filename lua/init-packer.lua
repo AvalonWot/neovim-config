@@ -14,8 +14,19 @@ return require('packer').startup(function()
 
   use {'easymotion/vim-easymotion', cond=term}
   use {'asvetliakov/vim-easymotion', cond=vscode, as='vsc-easymotion'}
-  use {'ur4ltz/surround.nvim', config = function() require'surround'.setup{mappings_style='sandwich'} end}
+  use {'ur4ltz/surround.nvim', config=function() require'surround'.setup{mappings_style='sandwich'} end}
   use {'sainnhe/gruvbox-material', cond=term, config=function() vim.cmd[[colorscheme gruvbox-material]] end }
+  use {'nvim-treesitter/nvim-treesitter', cond=term, run=':TSUpdate', config=function()
+    require'nvim-treesitter.configs'.setup {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+      indent = {
+        enable = true
+      }
+    }
+  end}
 
 
   if packer_bootstrap then

@@ -8,6 +8,8 @@ if vim.fn.exists('g:vscode') == 0 then
   vim.o.list = true
   vim.o.listchars = "tab:> ,space:."
   vim.o.cursorline = true
+  vim.o.termguicolors = true
+  vim.o.background = 'dark'
 end
 
 vim.g.mapleader = ' '

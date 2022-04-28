@@ -15,7 +15,7 @@ return require('packer').startup(function()
   use {'easymotion/vim-easymotion', cond=term}
   use {'asvetliakov/vim-easymotion', cond=vscode, as='vsc-easymotion'}
   use {'ur4ltz/surround.nvim', config = function() require'surround'.setup{mappings_style='sandwich'} end}
-  use {'projekt0n/github-nvim-theme', cond=term, config = function() require'github-theme'.setup() end}
+  use {'sainnhe/gruvbox-material', cond=term, config=function() vim.cmd[[colorscheme gruvbox-material]] end }
 
 
   if packer_bootstrap then

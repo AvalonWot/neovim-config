@@ -27,6 +27,9 @@ return require('packer').startup(function()
       }
     }
   end}
+  use {'glepnir/galaxyline.nvim', branch='main',cond=term,requires={'kyazdani42/nvim-web-devicons', opt=true}, config=function()
+      require 'init-statusline'
+  end}
 
 
   if packer_bootstrap then

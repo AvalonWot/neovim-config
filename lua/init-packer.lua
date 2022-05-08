@@ -30,6 +30,12 @@ return require('packer').startup(function()
   use {'glepnir/galaxyline.nvim', branch='main',cond=term,requires={'kyazdani42/nvim-web-devicons', opt=true}, config=function()
       require 'init-statusline'
   end}
+  use {'yamatsum/nvim-cursorline', cond=term, config=function()
+      require('nvim-cursorline').setup {
+          cursorline={enable=true, timeout=1000,number=false},
+          cursorword={enable=true, min_length=3, hl={underline=true}}
+      }
+  end}
 
 
   if packer_bootstrap then

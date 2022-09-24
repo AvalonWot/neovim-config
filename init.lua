@@ -14,7 +14,7 @@ if vim.fn.exists('g:vscode') == 0 then
 else
   --au BufRead,BufNewFile * startinsert
   api.nvim_create_autocmd(
-    {"BufRead", "BufNewFile"},
+    { "BufEnter", "BufRead", "BufNewFile"},
     {pattern="*", command="startinsert"}
   )
 end
